@@ -2,7 +2,7 @@
 
 ForceNodes is a TesmioLoader plugin for **Workers & Resources: Soviet Republic**. It exposes and edits genuine road and pedestrian path nodes while keeping protected building connectors and shared road/path nodes guarded.
 
-Current version: **1.6.0 stable**
+Current version: **1.6.1 stable**
 
 ## Features
 
@@ -40,9 +40,9 @@ The Workshop package is installed manually after subscription because Steam plac
 ## Default controls
 
 ```text
-Ctrl + Numpad 1   Toggle node overlay
-Ctrl + Numpad 2   Toggle free force placement
-Ctrl + Numpad 3   Cycle grid mode OFF / SQUARE
+Ctrl + Numpad 8   Toggle node overlay
+Ctrl + Numpad 9   Toggle free force placement
+Ctrl + Numpad 0   Cycle grid mode OFF / SQUARE
 Mouse button 4    Add or promote the selected node
 Mouse button 5    Remove a highlighted safe simple node
 Escape            Exit ForceNodes modes
