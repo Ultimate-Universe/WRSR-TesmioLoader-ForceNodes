@@ -30,3 +30,8 @@ ForceNodes v1.6.0 is split into two runtime modules.
 Dependent plugins should consume the `ForceNodes` service rather than calling DLL offsets or installing duplicate topology hooks.
 
 The public ABI is defined in `source/ForceNodes_API.h`.
+
+
+## Hook chaining
+
+From v1.6.1, the engine recognises the standard Tesmio absolute detour already installed at the current-build main construction-frame RVA. It uses the live detour bytes as the inline-hook expectation, so ForceNodes chains the earlier plugin rather than requiring pristine game bytes.
