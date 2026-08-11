@@ -1,7 +1,0 @@
-LIBRARY KERNEL32.dll
-EXPORTS
-    GetProcAddress
-    VirtualProtect
-    FlushInstructionCache
-    GetCurrentProcess
-    DisableThreadLibraryCalls
