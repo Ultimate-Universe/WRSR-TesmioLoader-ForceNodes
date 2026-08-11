@@ -1,2 +1,0 @@
-ForceNodes v1.6.1 static verification is performed by source/test_build.py.
-The compatibility cave, PE exports/imports, version strings, and runtime hashes are checked before release.
