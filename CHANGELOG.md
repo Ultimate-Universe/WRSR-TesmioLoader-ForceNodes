@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.8.0
+
+- Updated ForceNodes for Workers & Resources: Soviet Republic 1.1.1.9.
+- Updated both TesmioLoader plugins from host API 3 to host API 4.
+- Revalidated all seven native targets against the 1.1.1.9 executable and replaced the obsolete 1.1.1.7 fallback RVAs.
+- Preserved signature-first resolution; the 1.1.1.9 RVAs are validated fallbacks rather than blind addresses.
+- Removed the previous-game fallback layout so this release fails closed on unsupported WRSR builds.
+- Updated loader, log, configuration, PE image and Windows version metadata to v1.8.0.
+- Added compiled Windows version resources to the reproducible source build and refreshed release verification.
+
 ## 1.7.0
 
 - Rebuilt ForceNodes as a complete source-built TesmioLoader plugin with a conventional Windows PE/import structure.

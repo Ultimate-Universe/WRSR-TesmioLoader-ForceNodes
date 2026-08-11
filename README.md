@@ -23,7 +23,7 @@ Marker colours:
 ## Requirements
 
 - Workers & Resources: Soviet Republic on 64-bit Windows.
-- [TesmioLoader](https://steamcommunity.com/sharedfiles/filedetails/?id=3774492854), using plugin API version 3.
+- [TesmioLoader](https://steamcommunity.com/sharedfiles/filedetails/?id=3773169177), using plugin API version 4.
 
 ForceNodes cannot run through the normal Steam launch path by itself. The game must be started through `tesmiolauncher.exe`.
 
@@ -86,7 +86,7 @@ The `advanced_*` values are compatibility recovery overrides. Leave them at thei
 
 ForceNodes uses narrowly scoped runtime signatures and one main-frame hook because WRSR does not expose native path-node editing through normal Workshop asset scripting. The signatures are resolved before any hook or path edit is enabled. A missing or ambiguous required signature causes ForceNodes to refuse activation and write the exact failure to `tesmioloader.log`; it does not fall back to an unverified address.
 
-ForceNodes v1.7.0 was verified against the current supplied game binaries and TesmioLoader API version 3, then smoke-tested in game for overlay activation and the restored right-side status HUD. See [`docs/COMPATIBILITY.md`](docs/COMPATIBILITY.md) for the exact hashes, native functions, and structure assumptions checked for this release.
+ForceNodes v1.8.0 was verified against WRSR 1.1.1.9 and TesmioLoader API version 4, then successfully tested in game by the mod author. It intentionally supports the verified 1.1.1.9 layout only. See [`docs/COMPATIBILITY.md`](docs/COMPATIBILITY.md) for the exact hashes, native functions, and structure assumptions checked for this release.
 
 Game updates can change code signatures or internal structures. Back up important saves and check the issue tracker before using ForceNodes after a major game update.
 
@@ -101,6 +101,7 @@ The stable build publishes API versions **1, 2, 3, and 6**. The service supports
 Requirements:
 
 - LLVM 17 or later with `clang-cl` and `lld-link` in `PATH`;
+- `llvm-rc` for the embedded Windows version resources;
 - Python 3.10 or later for static release checks.
 
 On Windows:
@@ -113,6 +114,12 @@ On Linux or another environment with the Windows-targeting LLVM tools:
 
 ```bash
 ./build-clang.sh
+```
+
+Alternatively, Zig 0.14 or later can build the same native Windows targets:
+
+```bash
+./build-zig.sh
 ```
 
 The scripts perform a clean deterministic x64 release build and write the runtime files to `build/plugins/`. They then run `tools/test_build.py` to verify the PE architecture, imports, exports, hardening flags, dependencies, version strings, and configuration.
@@ -134,7 +141,7 @@ See [`docs/BUILDING.md`](docs/BUILDING.md) and [`docs/ARCHITECTURE.md`](docs/ARC
 source/include/       TesmioLoader contract and public ForceNodes API
 source/src/           Complete ForceNodes and compatibility-module source
 config/               Shipped configuration
-build_support/        Import-library definitions for the SDK-independent build
+build_support/        Import definitions and Windows version resources
 tools/                Static release verifier
 docs/                 Architecture, build, and compatibility documentation
 release/plugins/       Current player-facing runtime files

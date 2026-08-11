@@ -1,0 +1,4 @@
+ForceNodes v1.8.0 static verification is performed by tools/test_build.py.
+It checks the native x64 PE structure, exact exports, normal imports, ASLR/high-entropy/NX flags, unwind metadata, nonzero checksum, absence of RWX/CLR/PDB material, embedded v1.8.0 metadata, runtime configuration, and SHA-256 hashes.
+
+When supplied with WRSR binaries, it additionally checks the seven 1.1.1.9 signatures/RVAs and all required C3D exports.
